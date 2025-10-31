@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by CadSurf.rc
+// Microsoft Visual C++ 生成的包含文件。
+// 供 CadSurf.rc 使用
 //
 #define IDR_MANIFEST                    1
 #define IDD_ABOUTBOX                    100
@@ -137,6 +137,20 @@
 #define ID_SKECH_CIRCLE                 32853
 #define ID_32854                        32854
 #define ID_SKETCH_CLOSE                 32855
+#define ID_SKETCH_BEZIER                32856
+#define ID_FEATURE_ROTATION             32857
+#define ID_REVOLVEDAXIS_X               32858
+#define ID_REVOLVEDAXIS_Y               32859
+#define ID_REVOLVEDAXIS_Z               32860
+#define ID_REVOLVEDAXIS_OFF             32861
+#define ID_FEATURE_REVOLVE              32862
+#define ID_REVOLVEAXIS_X                32863
+#define ID_REVOLVEAXIS_Z                32864
+#define ID_REVOLVEAXIS_OFF              32865
+#define ID_FEATURE_X                    32866
+#define ID_FEATURE_Y                    32867
+#define ID_FEATURE_Z                    32868
+#define ID_FEATURE_OFF                  32869
 
 // Next default values for new objects
 // 
@@ -144,7 +158,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
 #define _APS_NEXT_RESOURCE_VALUE        145
-#define _APS_NEXT_COMMAND_VALUE         32856
+#define _APS_NEXT_COMMAND_VALUE         32870
 #define _APS_NEXT_CONTROL_VALUE         1032
 #define _APS_NEXT_SYMED_VALUE           109
 #endif

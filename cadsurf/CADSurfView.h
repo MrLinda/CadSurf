@@ -117,6 +117,8 @@ private:
 	CGLView* myView;
 	int m_iSketchPlane; //草图的平面：0-关闭，1-XOY, ...
 	int m_iSketchType; //1-直线；2-圆；。。。
+	int m_iFeatureAxis; //特征轴方向：0-关闭，1-X,2-Y,3-Z
+	int m_iFeatureType; //特征类型：0-关闭，1-拉伸，2-旋转
 
 // Generated message map functions
 protected:
@@ -196,7 +198,22 @@ public:
 	afx_msg void OnUpdateSketchClose(CCmdUI *pCmdUI);
 	afx_msg void OnSkechCircle();
 	afx_msg void OnUpdateSkechCircle(CCmdUI *pCmdUI);
+	afx_msg void OnSketchBezier();
+	afx_msg void OnUpdateSketchBezier(CCmdUI* pCmdUI);
+
+	afx_msg void OnFeatureX();
+	afx_msg void OnUpdateFeatureX(CCmdUI* pCmdUI);
+	afx_msg void OnFeatureY();
+	afx_msg void OnUpdateFeatureY(CCmdUI* pCmdUI);
+	afx_msg void OnFeatureZ();
+	afx_msg void OnUpdateFeatureZ(CCmdUI* pCmdUI);
+	afx_msg void OnFeatureClose();
+	afx_msg void OnUpdateFeatureClose(CCmdUI* pCmdUI);
+	afx_msg void OnFeatureRevolve();
+	afx_msg void OnUpdateFeatureRevolve(CCmdUI* pCmdUI);
+
 	afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
+
 };
 
 #ifndef _DEBUG  // debug version in CadSurfView.cpp

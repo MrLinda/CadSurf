@@ -166,6 +166,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="COMMAND.Cpp" />
+    <ClCompile Include="CreateBezier.cpp" />
     <ClCompile Include="CREATELINE.CPP" />
     <ClCompile Include="GLDisplayContext.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

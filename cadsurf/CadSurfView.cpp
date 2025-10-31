@@ -103,6 +103,20 @@ BEGIN_MESSAGE_MAP(CCadSurfView, CView)
 	ON_UPDATE_COMMAND_UI(ID_SKETCH_CLOSE, &CCadSurfView::OnUpdateSketchClose)
 	ON_COMMAND(ID_SKECH_CIRCLE, &CCadSurfView::OnSkechCircle)
 	ON_UPDATE_COMMAND_UI(ID_SKECH_CIRCLE, &CCadSurfView::OnUpdateSkechCircle)
+	ON_COMMAND(ID_SKETCH_BEZIER, &CCadSurfView::OnSketchBezier)
+	ON_UPDATE_COMMAND_UI(ID_SKETCH_BEZIER, &CCadSurfView::OnUpdateSketchBezier)
+
+	ON_COMMAND(ID_FEATURE_X, &CCadSurfView::OnFeatureX)
+	ON_UPDATE_COMMAND_UI(ID_FEATURE_X, &CCadSurfView::OnUpdateFeatureX)
+	ON_COMMAND(ID_FEATURE_Y, &CCadSurfView::OnFeatureY)
+	ON_UPDATE_COMMAND_UI(ID_FEATURE_Y, &CCadSurfView::OnUpdateFeatureY)
+	ON_COMMAND(ID_FEATURE_Z, &CCadSurfView::OnFeatureZ)
+	ON_UPDATE_COMMAND_UI(ID_FEATURE_Z, &CCadSurfView::OnUpdateFeatureZ)
+	ON_COMMAND(ID_FEATURE_OFF, &CCadSurfView::OnFeatureClose)
+	ON_UPDATE_COMMAND_UI(ID_FEATURE_OFF, &CCadSurfView::OnUpdateFeatureClose)
+	ON_COMMAND(ID_FEATURE_REVOLVE, &CCadSurfView::OnFeatureRevolve)
+	ON_UPDATE_COMMAND_UI(ID_FEATURE_REVOLVE, &CCadSurfView::OnUpdateFeatureRevolve)
+
 	ON_WM_KEYDOWN()
 END_MESSAGE_MAP()
 
@@ -113,6 +127,8 @@ CCadSurfView::CCadSurfView()
 {
 	m_iSketchPlane = 0;
 	m_iSketchType = 0; //什么都不做;
+	m_iFeatureAxis = 0;
+	m_iFeatureType = 0;
 
 	// TODO: add construction code here
 	lbutdown = false;
@@ -1219,6 +1235,78 @@ void CCadSurfView::OnUpdateSkechCircle(CCmdUI *pCmdUI)
 	pCmdUI->Enable(m_iSketchPlane != 0);
 }
 
+
+void CCadSurfView::OnSketchBezier()
+{
+	m_iSketchType = 3;
+
+	//command
+	if( m_pCmd ){ 
+		m_pCmd->Cancel();
+		delete m_pCmd ;
+		m_pCmd = NULL; 
+	}
+
+	m_pCmd = new CCreateBezier();
+}
+
+
+void CCadSurfView::OnUpdateSketchBezier(CCmdUI *pCmdUI)
+{
+	pCmdUI->SetCheck(m_iSketchType == 3);
+	pCmdUI->Enable(m_iSketchPlane != 0);
+}
+
+void CCadSurfView::OnFeatureX()
+{
+	m_iFeatureAxis = 1;
+}
+
+void CCadSurfView::OnUpdateFeatureX(CCmdUI* pCmdUI)
+{
+	pCmdUI->SetCheck(m_iFeatureAxis == 1);
+}
+
+void CCadSurfView::OnFeatureY()
+{
+	m_iFeatureAxis = 2;
+}
+
+void CCadSurfView::OnUpdateFeatureY(CCmdUI* pCmdUI)
+{
+	pCmdUI->SetCheck(m_iFeatureAxis == 2);
+}
+
+void CCadSurfView::OnFeatureZ()
+{
+	m_iFeatureAxis = 3;
+}
+
+void CCadSurfView::OnUpdateFeatureZ(CCmdUI* pCmdUI)
+{
+	pCmdUI->SetCheck(m_iFeatureAxis == 3);
+}
+
+void CCadSurfView::OnFeatureClose()
+{
+	m_iFeatureAxis = 0;
+}
+
+void CCadSurfView::OnUpdateFeatureClose(CCmdUI* pCmdUI)
+{
+	pCmdUI->SetCheck(m_iFeatureAxis == 0);
+}
+
+void CCadSurfView::OnFeatureRevolve()
+{
+	m_iFeatureType = 2;
+}
+
+void CCadSurfView::OnUpdateFeatureRevolve(CCmdUI* pCmdUI)
+{
+	pCmdUI->Enable(m_iFeatureAxis != 0);
+	pCmdUI->SetCheck(m_iFeatureType == 2);
+}
 
 void CCadSurfView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {

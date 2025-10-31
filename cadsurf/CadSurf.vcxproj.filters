@@ -72,6 +72,9 @@
     <ClCompile Include="CREATELINE.CPP">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CreateBezier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CadSurf.rc">

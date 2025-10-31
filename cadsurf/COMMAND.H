@@ -18,6 +18,7 @@ enum ECommandType	// 命令类
 	ctCreatePolygon = 7,    //多边形 
 	ctCreateBlock  = 8,		//块
 	ctCreateConnect = 9,    //连接
+	ctCreateBezier = 10,    //创建贝塞尔曲线
 	// ...其他创建类型
 //  修改命令类
 	ctMove = 11,			// 移动

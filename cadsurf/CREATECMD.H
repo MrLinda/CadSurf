@@ -1,7 +1,9 @@
 #ifndef _CreateCmd_h_
 #define _CreateCmd_h_
 
+#include <vector>
 //#include "base.h"
+#include "ListOfCPoint3D.h"
 class CPoint3D;
 
 #ifdef __cplusplus
@@ -29,6 +31,25 @@ public:
 	int		Cancel() ;
 } ;
 
+/*
+ *  CCreateBezier
+ */
+class CCreateBezier : public CCommand
+{
+private:
+	CListOfCPoint3D* m_pPositions;
+
+public:
+	CCreateBezier() ;
+	~CCreateBezier() ;
+
+	int		GetType();
+	int		OnLButtonDown(UINT nFlags, const CPoint3D& pos) ;
+	int		OnMouseMove(UINT nFlags, const CPoint3D& pos) ;
+	int		OnRButtonDown(UINT nFlags, const CPoint3D& pos);
+	int		OnLButtonDblClk(UINT nFlags, const CPoint3D& pos);
+	int		Cancel() ;
+};
 
 
 // /*
