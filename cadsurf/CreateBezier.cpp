@@ -7,18 +7,23 @@
 #include "CreateCmd.h"
 #include "GLCurve.h"
 
+#include "GLView.h"
+extern CGLView* g_pGLView;
+
+
 CCreateBezier::CCreateBezier() 
 {
 	m_nStep = 0;
-	m_pPositions = new CListOfCPoint3D;
+	m_pPositions = std::make_unique<CListOfCPoint3D>();
+	m_pTmpCurve = NULL;
 }
 
 CCreateBezier::~CCreateBezier() 
 {
-	if(m_pPositions)
+	if(m_pTmpCurve)
 	{
-		m_pPositions->Clear();
-		delete m_pPositions;
+		g_pGLView->RemoveEntity(m_pTmpCurve);
+		m_pTmpCurve = NULL;
 	}
 }
 

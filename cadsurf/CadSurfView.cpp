@@ -1300,11 +1300,31 @@ void CCadSurfView::OnUpdateFeatureClose(CCmdUI* pCmdUI)
 void CCadSurfView::OnFeatureRevolve()
 {
 	m_iFeatureType = 2;
+
+	// command
+	if( m_pCmd ){ 
+		m_pCmd->Cancel();
+		delete m_pCmd ;
+		m_pCmd = NULL; 
+	}
+	m_pCmd = new CCreateRevolvedSurface();
 }
 
 void CCadSurfView::OnUpdateFeatureRevolve(CCmdUI* pCmdUI)
 {
 	pCmdUI->Enable(m_iFeatureAxis != 0);
+	if(m_iSketchPlane == 1 && m_iFeatureAxis != 3)
+	{
+		pCmdUI->Enable(FALSE);
+	}
+	else if(m_iSketchPlane == 2 && m_iFeatureAxis != 2)
+	{
+		pCmdUI->Enable(FALSE);
+	}
+	else if(m_iSketchPlane == 3 && m_iFeatureAxis != 1)
+	{
+		pCmdUI->Enable(FALSE);
+	}
 	pCmdUI->SetCheck(m_iFeatureType == 2);
 }
 

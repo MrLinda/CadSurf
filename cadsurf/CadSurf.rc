@@ -53,6 +53,16 @@ BEGIN
     PUSHBUTTON      "Modify",IDC_BUTTONmodify,179,98,50,14
 END
 
+IDD_REVOLVE_PARAMS DIALOGEX 0, 0, 196, 63
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_BORDER | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,41,50,14
+    PUSHBUTTON      "取消",IDCANCEL,139,42,50,14
+    EDITTEXT        IDC_EDIT1,7,25,94,15,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           " 请输入旋转角度：（正为顺时针，负为逆时针）",IDC_STATIC,7,14,178,11
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -69,8 +79,31 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 133
     END
+
+    IDD_REVOLVE_PARAMS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
 END
 #endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_REVOLVE_PARAMS AFX_DIALOG_LAYOUT
+BEGIN
+    0,
+    0, 0, 0, 0,
+    0, 0, 0, 0,
+    0, 0, 0, 0,
+    0, 0, 100, 0
+END
 
 #endif    // 中文(简体，中国) resources
 /////////////////////////////////////////////////////////////////////////////

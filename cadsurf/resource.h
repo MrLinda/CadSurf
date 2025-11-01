@@ -18,6 +18,7 @@
 #define IDD_GRID                        138
 #define IDB_SMALLSPLASH                 143
 #define IDD_LIGHT                       144
+#define IDD_REVOLVE_PARAMS              145
 #define IDC_ALUM                        1000
 #define IDC_BRASS                       1001
 #define IDC_PBRONZE                     1002
@@ -157,9 +158,9 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        145
+#define _APS_NEXT_RESOURCE_VALUE        147
 #define _APS_NEXT_COMMAND_VALUE         32870
-#define _APS_NEXT_CONTROL_VALUE         1032
+#define _APS_NEXT_CONTROL_VALUE         1033
 #define _APS_NEXT_SYMED_VALUE           109
 #endif
 #endif

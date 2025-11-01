@@ -3,7 +3,9 @@
 
 #include <vector>
 //#include "base.h"
+#include "command.h"
 #include "ListOfCPoint3D.h"
+#include "RevolveParams.h"
 class CPoint3D;
 
 #ifdef __cplusplus
@@ -37,7 +39,8 @@ public:
 class CCreateBezier : public CCommand
 {
 private:
-	CListOfCPoint3D* m_pPositions;
+	std::unique_ptr<CListOfCPoint3D> m_pPositions;
+	CGLCurve* m_pTmpCurve;
 
 public:
 	CCreateBezier() ;
@@ -51,6 +54,25 @@ public:
 	int		Cancel() ;
 };
 
+
+class CCreateRevolvedSurface : public CCommand
+{
+private:
+	CGLCurve* m_pProfileCurve;
+
+public:
+	CCreateRevolvedSurface();
+	~CCreateRevolvedSurface();
+
+	int GetType();
+	int OnLButtonDown(UINT nFlags, const CPoint3D& pos);
+	int OnMouseMove(UINT nFlags, const CPoint3D& pos);
+	int OnRButtonDown(UINT nFlags, const CPoint3D& pos);
+	int Cancel();
+
+private:
+	void PromptForAngle();
+};
 
 // /*
 //  *	CCreatePolygon
