@@ -75,6 +75,12 @@
     <ClCompile Include="CreateBezier.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CreateRevolvedSurface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RevolveParams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CadSurf.rc">
@@ -137,6 +143,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CREATECMD.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RevolveParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

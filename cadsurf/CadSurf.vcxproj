@@ -168,6 +168,7 @@
     <ClCompile Include="COMMAND.Cpp" />
     <ClCompile Include="CreateBezier.cpp" />
     <ClCompile Include="CREATELINE.CPP" />
+    <ClCompile Include="CreateRevolvedSurface.cpp" />
     <ClCompile Include="GLDisplayContext.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -212,6 +213,7 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="RevolveParams.cpp" />
     <ClCompile Include="Splash.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -261,6 +263,7 @@
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="MaterialDlg.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="RevolveParams.h" />
     <ClInclude Include="Splash.h" />
     <ClInclude Include="SplitterWndEx.h" />
     <ClInclude Include="StdAfx.h" />

@@ -1,6 +1,7 @@
 #ifndef _Command_h_
 #define _Command_h_
 
+#include "Point3D.h"
 class CPoint3D;
 
 #ifdef __cplusplus
@@ -25,9 +26,12 @@ enum ECommandType	// 命令类
 	ctRotate = 12,			// 旋转
 	ctMirror = 13,			// 镜像
 	// ...其他创建类型
-//修改视图命令类
+//	修改视图命令类
 	ctViewPan = 20 ,
-	ctViewZoomRgn = 21
+	ctViewZoomRgn = 21,
+//	特征命令类
+	ctFeatureExtrude = 31, //拉伸
+	ctFeatureRevolve = 32, //旋转
 };
 
 class CCommand
