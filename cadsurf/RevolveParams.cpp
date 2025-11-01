@@ -42,7 +42,7 @@ void RevolveParams::DoDataExchange(CDataExchange* pDX)
 	if (mRadio1.GetCheck())
 	{
 		mOrientation = 1; // 顺时针
-	}
+}
 	else if (mRadio2.GetCheck())
 	{
 		mOrientation = 2; // 逆时针
