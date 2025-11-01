@@ -58,8 +58,8 @@ public:
 class CCreateRevolvedSurface : public CCommand
 {
 private:
-	int axis = 1; // 1-X,2-Y,3-Z
-	double angle = 360.0; // 旋转角度
+	int m_axis; // 1-X,2-Y,3-Z
+	double m_angle; // 旋转角度
 	CGLCurve* m_pProfileCurve;
 	CRevolvedSurface* m_pRevolvedSurface;
 

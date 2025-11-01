@@ -4,6 +4,8 @@
 CCreateRevolvedSurface::CCreateRevolvedSurface()
 	: m_pProfileCurve(nullptr)
 {
+	m_axis = 1; // 默认绕X轴旋转
+	m_angle = 360.0; // 默认旋转360度
 }
 
 CCreateRevolvedSurface::~CCreateRevolvedSurface()
@@ -45,6 +47,7 @@ void CCreateRevolvedSurface::PromptForAngle()
 	{
 		// 获取旋转角度并创建旋转曲面
 		double angle = dlg.mRevolveAngle;
+		int orientation = dlg.mOrientation;
 		// 创建旋转曲面的逻辑
 		cout << "Revolve angle: " << angle << endl;
 	}

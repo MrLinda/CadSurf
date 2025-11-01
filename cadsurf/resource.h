@@ -63,6 +63,8 @@
 #define IDC_BUTTONdelete                1030
 #define IDC_BUTTON3                     1031
 #define IDC_BUTTONmodify                1031
+#define IDC_RADIO1                      1032
+#define IDC_RADIO2                      1033
 #define ID_POINTS                       32771
 #define ID_LINES                        32772
 #define ID_CIRCLES                      32774
@@ -158,7 +160,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        147
+#define _APS_NEXT_RESOURCE_VALUE        146
 #define _APS_NEXT_COMMAND_VALUE         32870
 #define _APS_NEXT_CONTROL_VALUE         1033
 #define _APS_NEXT_SYMED_VALUE           109

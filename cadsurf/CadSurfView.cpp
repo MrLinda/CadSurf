@@ -1312,16 +1312,16 @@ void CCadSurfView::OnFeatureRevolve()
 
 void CCadSurfView::OnUpdateFeatureRevolve(CCmdUI* pCmdUI)
 {
-	pCmdUI->Enable(m_iFeatureAxis != 0);
-	if(m_iSketchPlane == 1 && m_iFeatureAxis != 3)
+	pCmdUI->Enable(m_iFeatureAxis != 0 && m_iSketchPlane != 0);
+	if(m_iSketchPlane == 1 && m_iFeatureAxis == 3)
 	{
 		pCmdUI->Enable(FALSE);
 	}
-	else if(m_iSketchPlane == 2 && m_iFeatureAxis != 2)
+	else if(m_iSketchPlane == 2 && m_iFeatureAxis == 2)
 	{
 		pCmdUI->Enable(FALSE);
 	}
-	else if(m_iSketchPlane == 3 && m_iFeatureAxis != 1)
+	else if(m_iSketchPlane == 3 && m_iFeatureAxis == 1)
 	{
 		pCmdUI->Enable(FALSE);
 	}

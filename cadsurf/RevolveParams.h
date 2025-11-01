@@ -19,12 +19,19 @@ public:
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
+	BOOL OnInitDialog();
 
 	DECLARE_MESSAGE_MAP()
 
 public:
 	double mRevolveAngle;
+	int mOrientation;
 
 	afx_msg void OnBnClickedOk();
 	afx_msg void OnEnChangeEdit1();
+	
+	CButton mRadio1;
+	CButton mRadio2;
+	afx_msg void OnBnClickedRadio1();
+	afx_msg void OnBnClickedRadio2();
 };
